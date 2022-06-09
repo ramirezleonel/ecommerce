@@ -1,22 +1,17 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
 
-import home from "../pages/home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../pages/home";
+
 
 const AppRouter = () => {
   return (
-    <Router>
-      {/* <Context.Provider value={{ }}> */}
+    <BrowserRouter>
       <Routes>
-        <Route exact path="/home" component={home} />
-    
+        <Route path="/" element={<Home />} />
+        <Route path="expenses" element={<Home />} />
+        <Route path="invoices" element={<Home />} />
       </Routes>
-
-      {/* </Context.Provider> */}
-    </Router>
+    </BrowserRouter>
   );
 };
 
