@@ -1,14 +1,13 @@
 import React from 'react'
 import { makeStyles } from '@mui/material';
-import DrawerComponent from '../components/DrawerComponent'
+import NavBarCustom from '../components/NavBarCustom'
 
 
 
 const Home = () => {
   return (
     <>
-      <DrawerComponent/>
-   
+      <NavBarCustom/>
     </>
 
   )

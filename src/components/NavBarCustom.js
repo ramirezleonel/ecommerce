@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import {
   Drawer,
@@ -10,7 +11,9 @@ import {
 } from "@material-ui/core";
 
 import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "react-router-dom";
+import { ShoppingCart } from "@material-ui/icons";
+import { Box } from "@mui/material";
+import SearchProducts from "./SearchProducts";
 
 const useStyles = makeStyles(() => ({
   link: {
@@ -22,47 +25,68 @@ const useStyles = makeStyles(() => ({
     color: "white",
   },
   navBar: {
+    display: "flex",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
     background: "#3A3A3A",
-    height: '150px'
+    height: "150px",
+    width: "100%",
   },
 }));
 
-const DrawerComponent = () => {
+const NavBarCustom = () => {
   const { link, icon, navBar } = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+
   return (
     <>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link className={link} to="/">Home</Link>
+              <Link className={link} to="/">
+                Home
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link className={link} to="/about">About</Link>
+              <Link className={link} to="/about">
+                About
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link className={link} to="/contact">Contact</Link>
+              <Link className={link} to="/contact">
+                Contact
+              </Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link className={link} to="/about">Faq</Link>
+              <Link className={link} to="/about">
+                Faq
+              </Link>
             </ListItemText>
           </ListItem>
         </List>
       </Drawer>
       <div className={navBar}>
-          <IconButton className={icon} onClick={() => setOpenDrawer(!openDrawer)}>
-            <MenuIcon />
-          </IconButton>
-        </div>
+        <IconButton className={icon} onClick={() => setOpenDrawer(!openDrawer)}>
+          <MenuIcon />
+        </IconButton>
+        <SearchProducts />
+        <IconButton className={icon}>
+          <ShoppingCart />
+        </IconButton>
+      
+      </div>
+      <Box >
+
+      </Box>
     </>
   );
 };
 
-export default DrawerComponent;
+export default NavBarCustom;
