@@ -1,13 +1,12 @@
 import React from 'react'
-import { makeStyles } from '@mui/material';
-import NavBarCustom from '../components/NavBarCustom'
-
-
+import Cards from '../components/Cards'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
     <>
-      <NavBarCustom/>
+      <Header />
+      <Cards />
     </>
 
   )
